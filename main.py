@@ -62,16 +62,6 @@ def mergeSort(arr):
   mergeSortHelper(arr, 0, len(arr) - 1)
 
 
-# start = time.perf_counter_ns()
-# mergeSort([12,3,53,46,2,34,12,54,26,1,167])
-# end = time.perf_counter_ns()
-# print(end - start)
-
-# start = time.perf_counter_ns()
-# mergeSort([12,3,53,46,2,34,12,54,26,1,167])
-# time.sleep(1)
-# end = time.perf_counter_ns()
-# print(end - start -1)
 data1 = [["arr = [n, n−1, ..., 3, 2, 1]"], ["","2^5", "2^6", "2^7","2^8","2^9"]]
 temp = ["Quick Sort"]
 for i in range(5, 10):
@@ -82,7 +72,7 @@ for i in range(5, 10):
   
   end = time.perf_counter_ns() 
   if(arr2 == sortedArray):
-    temp.append(round(end-begin, 4))
+    temp.append(round(end-begin))
   else:
     temp.append("failed")
 data1.append(temp)
@@ -96,7 +86,7 @@ for i in range(5, 10):
   
   end = time.perf_counter_ns()
   if(arr2 == sortedArray):
-    temp.append(round(end-begin, 4))
+    temp.append(round(end-begin))
   else:
     temp.append("failed")
 
@@ -111,15 +101,14 @@ for i in range(5, 10):
   
   end = time.perf_counter_ns()
   if(arr2 == arr1):
-    temp.append(round(end-begin, 4))
+    temp.append(round(end-begin))
   else:
     temp.append("failed")
 data1.append(temp)
-print()
+
 
 
 data2 = [["arr is a random permutation of [1, 2, ..., n]"], ["","2^5", "2^6", "2^7","2^8","2^9"]]
-print("arr is a random permutation of [1, 2, ..., n]")
 temp = ["Quick Sort"]
 for i in range(5, 10):
   arr1 = [x for x in range(1, pow(2,i)+1)]
@@ -130,7 +119,7 @@ for i in range(5, 10):
   
   end = time.perf_counter_ns()
   if(arr2 == sortedArray):
-    temp.append(round(end-begin, 4))
+    temp.append(round(end-begin))
   else:
     temp.append("failed")
 data2.append(temp)
@@ -145,7 +134,7 @@ for i in range(5, 10):
   
   end = time.perf_counter_ns()
   if(arr2 == sortedArray):
-    temp.append(round(end-begin, 4))
+    temp.append(round(end-begin))
   else:
     temp.append("failed")
 data2.append(temp)
@@ -160,14 +149,13 @@ for i in range(5, 10):
   
   end = time.perf_counter_ns() 
   if(arr2 == arr1):
-    temp.append(round(end-begin, 4))
+    temp.append(round(end-begin))
   else:
     temp.append("failed")
-print()
+
 data2.append(temp)
 
-print("arr = [1, 3, . . . , n − 1, 2, 4, ... , n]")
-data3 = [["arr = [1, 3, . . . , n − 1, 2, 4, ... , n]"], ["","2^5", "2^6", "2^7","2^8","2^9"]]
+data3 = [["arr = [1, 3, . . . , n − 1, 2, ... , n]"], ["","2^5", "2^6", "2^7","2^8","2^9"]]
 temp = ["Quick Sort"]
 for i in range(5, 10):
   odd = [x for x in range(1, pow(2,i), 2)]
@@ -179,7 +167,7 @@ for i in range(5, 10):
   
   end = time.perf_counter_ns()
   if sortedArray == arr2:
-    temp.append(round(end-begin, 4))
+    temp.append(round(end-begin))
   else:
     temp.append("failed")
 data3.append(temp)
@@ -195,7 +183,7 @@ for i in range(5, 10):
   
   end = time.perf_counter_ns()
   if sortedArray == arr2:
-    temp.append(round(end-begin, 4))
+    temp.append(round(end-begin))
   else:
     temp.append("failed")
 data3.append(temp)
@@ -211,11 +199,11 @@ for i in range(5, 10):
   
   end = time.perf_counter_ns()
   if arr == arr2:
-    temp.append(round(end-begin, 4))
+    temp.append(round(end-begin))
   else:
     temp.append("failed")
 data3.append(temp)
-print()
+
 
 res = data1 + [""] + data2 + [""] + data3
 with open("result.csv", "w",encoding="utf-8", newline="") as file:
