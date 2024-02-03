@@ -69,7 +69,6 @@ for i in range(5, 10):
   arr2 = [x for x in range(1, pow(2,i)+1)]
   begin = time.perf_counter_ns()
   sortedArray = quickSort(arr1)
-  
   end = time.perf_counter_ns() 
   if(arr2 == sortedArray):
     temp.append(round(end-begin))
@@ -83,30 +82,25 @@ for i in range(5, 10):
   arr2 = [x for x in range(1, pow(2,i)+1)]
   begin = time.perf_counter_ns()
   sortedArray = randomQuickSort(arr1)
-  
   end = time.perf_counter_ns()
   if(arr2 == sortedArray):
     temp.append(round(end-begin))
   else:
     temp.append("failed")
-
-    
 data1.append(temp)
+
 temp = ["Merge Sort"]
 for i in range(5, 10):
   arr1 = [x for x in range(1, pow(2,i)+1)][::-1]
   arr2 = [x for x in range(1, pow(2,i)+1)]
   begin = time.perf_counter_ns()
   mergeSort(arr1)
-  
   end = time.perf_counter_ns()
   if(arr2 == arr1):
     temp.append(round(end-begin))
   else:
     temp.append("failed")
 data1.append(temp)
-
-
 
 data2 = [["arr is a random permutation of [1, 2, ..., n]"], ["","2^5", "2^6", "2^7","2^8","2^9"]]
 temp = ["Quick Sort"]
@@ -116,7 +110,6 @@ for i in range(5, 10):
   random.shuffle(arr1)
   begin = time.perf_counter_ns()
   sortedArray = quickSort(arr1)
-  
   end = time.perf_counter_ns()
   if(arr2 == sortedArray):
     temp.append(round(end-begin))
@@ -131,7 +124,6 @@ for i in range(5, 10):
   random.shuffle(arr1)
   begin = time.perf_counter_ns()
   sortedArray = randomQuickSort(arr1)
-  
   end = time.perf_counter_ns()
   if(arr2 == sortedArray):
     temp.append(round(end-begin))
@@ -146,7 +138,6 @@ for i in range(5, 10):
   random.shuffle(arr1)
   begin = time.perf_counter_ns()
   mergeSort(arr1)
-  
   end = time.perf_counter_ns() 
   if(arr2 == arr1):
     temp.append(round(end-begin))
@@ -164,7 +155,6 @@ for i in range(5, 10):
   arr = odd + even
   begin = time.perf_counter_ns()
   sortedArray = quickSort(arr)
-  
   end = time.perf_counter_ns()
   if sortedArray == arr2:
     temp.append(round(end-begin))
@@ -180,7 +170,6 @@ for i in range(5, 10):
   arr = odd + even
   begin = time.perf_counter_ns()
   sortedArray = randomQuickSort(arr)
-  
   end = time.perf_counter_ns()
   if sortedArray == arr2:
     temp.append(round(end-begin))
@@ -196,14 +185,12 @@ for i in range(5, 10):
   arr = odd + even
   begin = time.perf_counter_ns()
   mergeSort(arr)
-  
   end = time.perf_counter_ns()
   if arr == arr2:
     temp.append(round(end-begin))
   else:
     temp.append("failed")
 data3.append(temp)
-
 
 res = data1 + [""] + data2 + [""] + data3
 with open("result.csv", "w",encoding="utf-8", newline="") as file:
