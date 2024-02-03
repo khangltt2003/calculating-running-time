@@ -62,17 +62,27 @@ def mergeSort(arr):
   mergeSortHelper(arr, 0, len(arr) - 1)
 
 
+# start = time.perf_counter_ns()
+# mergeSort([12,3,53,46,2,34,12,54,26,1,167])
+# end = time.perf_counter_ns()
+# print(end - start)
+
+# start = time.perf_counter_ns()
+# mergeSort([12,3,53,46,2,34,12,54,26,1,167])
+# time.sleep(1)
+# end = time.perf_counter_ns()
+# print(end - start -1)
 data1 = [["arr = [n, n−1, ..., 3, 2, 1]"], ["","2^5", "2^6", "2^7","2^8","2^9"]]
 temp = ["Quick Sort"]
 for i in range(5, 10):
   arr1 = [x for x in range(1, pow(2,i)+1)][::-1]
   arr2 = [x for x in range(1, pow(2,i)+1)]
-  begin = time.time()
+  begin = time.perf_counter_ns()
   sortedArray = quickSort(arr1)
-  time.sleep(0.1)
-  end = time.time() 
+  
+  end = time.perf_counter_ns() 
   if(arr2 == sortedArray):
-    temp.append(round(end - begin - 0.1, 4))
+    temp.append(round(end-begin, 4))
   else:
     temp.append("failed")
 data1.append(temp)
@@ -81,12 +91,12 @@ temp = ["Randomized Quick Sort"]
 for i in range(5, 10):
   arr1 = [x for x in range(1, pow(2,i)+1)][::-1]
   arr2 = [x for x in range(1, pow(2,i)+1)]
-  begin = time.time()
+  begin = time.perf_counter_ns()
   sortedArray = randomQuickSort(arr1)
-  time.sleep(0.1)
-  end = time.time()
+  
+  end = time.perf_counter_ns()
   if(arr2 == sortedArray):
-    temp.append(round(end - begin - 0.1, 4))
+    temp.append(round(end-begin, 4))
   else:
     temp.append("failed")
 
@@ -96,12 +106,12 @@ temp = ["Merge Sort"]
 for i in range(5, 10):
   arr1 = [x for x in range(1, pow(2,i)+1)][::-1]
   arr2 = [x for x in range(1, pow(2,i)+1)]
-  begin = time.time()
+  begin = time.perf_counter_ns()
   mergeSort(arr1)
-  time.sleep(0.1)
-  end = time.time()
+  
+  end = time.perf_counter_ns()
   if(arr2 == arr1):
-    temp.append(round(end - begin - 0.1, 4))
+    temp.append(round(end-begin, 4))
   else:
     temp.append("failed")
 data1.append(temp)
@@ -115,12 +125,12 @@ for i in range(5, 10):
   arr1 = [x for x in range(1, pow(2,i)+1)]
   arr2 = [x for x in range(1, pow(2,i)+1)]
   random.shuffle(arr1)
-  begin = time.time()
+  begin = time.perf_counter_ns()
   sortedArray = quickSort(arr1)
-  time.sleep(0.1)
-  end = time.time()
+  
+  end = time.perf_counter_ns()
   if(arr2 == sortedArray):
-    temp.append(round(end - begin - 0.1, 4))
+    temp.append(round(end-begin, 4))
   else:
     temp.append("failed")
 data2.append(temp)
@@ -130,12 +140,12 @@ for i in range(5, 10):
   arr1 = [x for x in range(1, pow(2,i)+1)]
   arr2 = [x for x in range(1, pow(2,i)+1)]
   random.shuffle(arr1)
-  begin = time.time()
+  begin = time.perf_counter_ns()
   sortedArray = randomQuickSort(arr1)
-  time.sleep(0.1)
-  end = time.time()
+  
+  end = time.perf_counter_ns()
   if(arr2 == sortedArray):
-    temp.append(round(end - begin - 0.1, 4))
+    temp.append(round(end-begin, 4))
   else:
     temp.append("failed")
 data2.append(temp)
@@ -145,12 +155,12 @@ for i in range(5, 10):
   arr1 = [x for x in range(1, pow(2,i)+1)]
   arr2 = [x for x in range(1, pow(2,i)+1)]
   random.shuffle(arr1)
-  begin = time.time()
+  begin = time.perf_counter_ns()
   mergeSort(arr1)
-  time.sleep(0.1)
-  end = time.time() 
+  
+  end = time.perf_counter_ns() 
   if(arr2 == arr1):
-    temp.append(round(end - begin - 0.1, 4))
+    temp.append(round(end-begin, 4))
   else:
     temp.append("failed")
 print()
@@ -164,12 +174,12 @@ for i in range(5, 10):
   even = [x for x in range(2, pow(2,i)+1, 2)]
   arr2 = [x for x in range(1, pow(2,i) + 1)]
   arr = odd + even
-  begin = time.time()
+  begin = time.perf_counter_ns()
   sortedArray = quickSort(arr)
-  time.sleep(0.1)
-  end = time.time()
+  
+  end = time.perf_counter_ns()
   if sortedArray == arr2:
-    temp.append(round(end - begin - 0.1, 4))
+    temp.append(round(end-begin, 4))
   else:
     temp.append("failed")
 data3.append(temp)
@@ -180,12 +190,12 @@ for i in range(5, 10):
   even = [x for x in range(2, pow(2,i)+1, 2)]
   arr2 = [x for x in range(1, pow(2,i) + 1)]
   arr = odd + even
-  begin = time.time()
+  begin = time.perf_counter_ns()
   sortedArray = randomQuickSort(arr)
-  time.sleep(0.1)
-  end = time.time()
+  
+  end = time.perf_counter_ns()
   if sortedArray == arr2:
-    temp.append(round(end - begin - 0.1, 4))
+    temp.append(round(end-begin, 4))
   else:
     temp.append("failed")
 data3.append(temp)
@@ -196,12 +206,12 @@ for i in range(5, 10):
   even = [x for x in range(2, pow(2,i)+1, 2)]
   arr2 = [x for x in range(1, pow(2,i) + 1)]
   arr = odd + even
-  begin = time.time()
+  begin = time.perf_counter_ns()
   mergeSort(arr)
-  time.sleep(0.1)
-  end = time.time()
+  
+  end = time.perf_counter_ns()
   if arr == arr2:
-    temp.append(round(end - begin - 0.1, 4))
+    temp.append(round(end-begin, 4))
   else:
     temp.append("failed")
 data3.append(temp)
